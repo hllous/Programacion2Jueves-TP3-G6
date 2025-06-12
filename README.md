@@ -1,4 +1,4 @@
-# Programacion2Jueves-TP2-G6
+# Programacion2Jueves-TP3-G6
 Integrantes:
 - Iriarte, Facundo (1157051)
 - Kim, Pablo Leonardo (1162102)
