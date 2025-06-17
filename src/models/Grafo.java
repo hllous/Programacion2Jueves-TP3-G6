@@ -37,7 +37,7 @@ public class Grafo<T> implements IGrafo<T> {
     public void setNodos(Map<T, INodo<T>> nodos) {
         this.nodos = nodos;
     }
-  /// Recorridos
+    /// Recorridos
 
     /// Depth First Search
 
@@ -68,7 +68,9 @@ public class Grafo<T> implements IGrafo<T> {
 
     @Override
     public void bfs(T inicio) {
-        if (!nodos.containsKey(inicio)) { return; }
+        if (!nodos.containsKey(inicio)) {
+            return;
+        }
 
         Set<T> visitados = new HashSet<>();
         Queue<INodo<T>> cola = new LinkedList<>();
@@ -92,9 +94,39 @@ public class Grafo<T> implements IGrafo<T> {
         System.out.println();
     }
 
-    @Override
     public void matrizDeAdyacencia() {
-        System.out.println("En proceso");
-    }
+        System.out.println("Matriz de Adyacencia:");
+        List<T> claves = new ArrayList<>(nodos.keySet());
 
+        /// No podemos sortear claves por nombre
+        //Collections.sort((List)claves);
+
+        /// Encabezado
+        System.out.print("   ");
+        for (T key : claves) System.out.print(key + " ");
+        System.out.println();
+
+        /// Filas de la matriz
+        for (T i : claves) {
+            System.out.print(i + ": ");
+            INodo<T> nodoI = nodos.get(i);
+
+            for (T j : claves) {
+                INodo<T> nodoJ = nodos.get(j);
+                boolean esVecino = false;
+
+                for (INodo<T> vecino : nodoI.getVecinos()) {
+                    if (vecino == nodoJ) {
+                        esVecino = true;
+                        break;
+                    }
+                }
+
+                System.out.print(esVecino ? "1 " : "0 ");
+            }
+
+            System.out.println();
+
+        }
+    }
 }
