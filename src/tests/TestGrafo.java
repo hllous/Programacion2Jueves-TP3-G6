@@ -7,7 +7,7 @@ public class TestGrafo {
     public static void main(String[] args) {
         Grafo<Persona> grafo = new Grafo<>();
 
-        // Crear 8 personas
+        // Creo 8 personas
         Persona[] personas = new Persona[8];
         personas[0] = new Persona(1, "Ana");
         personas[1] = new Persona(2, "Beto");
@@ -24,7 +24,7 @@ public class TestGrafo {
             grafo.agregarNodo(p);
         }
 
-        // Agregar aristas (conexiones entre personas)
+        // Agrego aristas
 
         /// Conexiones Nodo 1
         grafo.agregarArista(personas[0], personas[0], 0);
@@ -48,7 +48,7 @@ public class TestGrafo {
         /// Conexiones Nodo 8
 
 
-        // Recorrer el grafo con DFS y BFS desde Ana (persona 0)
+        // Recorro el grafo con DFS y BFS desde Ana (persona 0)
         System.out.println("----- Recorrido DFS desde Ana -----");
         grafo.dfs(personas[0]);
         System.out.println("----- Recorrido BFS desde Ana -----");
